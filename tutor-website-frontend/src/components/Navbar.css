@@ -4,22 +4,25 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  padding: 20px 0;
+  padding: 16px 0;
   transition: all 0.3s ease;
   background: transparent;
 }
 
 .navbar.scrolled {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(10px);
   padding: 12px 0;
-  box-shadow: var(--shadow);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
 .nav-logo {
@@ -27,10 +30,11 @@
   align-items: center;
   gap: 8px;
   text-decoration: none;
+  z-index: 1001;
 }
 
 .logo-nks {
-  font-size: 28px;
+  font-size: clamp(22px, 5vw, 28px);
   font-weight: 800;
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   -webkit-background-clip: text;
@@ -39,8 +43,12 @@
 }
 
 .logo-text {
-  font-size: 18px;
+  font-size: clamp(14px, 4vw, 18px);
   font-weight: 600;
+  color: var(--dark);
+}
+
+.navbar.scrolled .logo-text {
   color: var(--dark);
 }
 
@@ -55,6 +63,8 @@
   list-style: none;
   gap: 32px;
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-item {
@@ -69,8 +79,10 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   transition: color 0.3s ease;
+  font-size: 16px;
+  padding: 8px 0;
 }
 
 .nav-item:hover > a,
@@ -93,15 +105,16 @@
   left: 50%;
   transform: translateX(-50%) translateY(10px);
   background: var(--white);
-  border-radius: 16px;
-  padding: 12px;
-  min-width: 200px;
-  box-shadow: var(--shadow-lg);
+  border-radius: 12px;
+  padding: 8px;
+  min-width: 220px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
   list-style: none;
   margin-top: 8px;
+  z-index: 100;
 }
 
 .nav-item:hover .dropdown-menu {
@@ -117,6 +130,8 @@
   text-decoration: none;
   border-radius: 8px;
   transition: all 0.3s ease;
+  font-size: 14px;
+  white-space: nowrap;
 }
 
 .dropdown-menu li a:hover {
@@ -131,18 +146,86 @@
 }
 
 .nav-btn {
-  padding: 10px 20px;
+  padding: 10px 24px;
   font-size: 14px;
+  font-weight: 500;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-outline {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: var(--white);
+  border: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
+}
+
+.find-scholar {
+  background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
+  color: var(--white);
+  border: none;
 }
 
 .nav-toggle {
   display: none;
+  background: none;
+  border: none;
   font-size: 24px;
   cursor: pointer;
   color: var(--dark);
   z-index: 1001;
+  padding: 8px;
+  transition: all 0.3s ease;
 }
 
+.nav-toggle:hover {
+  color: var(--primary);
+}
+
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile Menu Header */
+.nav-menu-header {
+  display: none;
+}
+
+/* Tablet Responsive */
 @media (max-width: 1024px) {
   .nav-menu {
     gap: 24px;
@@ -151,39 +234,114 @@
   .nav-list {
     gap: 24px;
   }
+
+  .nav-btn {
+    padding: 8px 20px;
+    font-size: 13px;
+  }
 }
 
+/* Mobile Responsive */
 @media (max-width: 768px) {
+  .navbar {
+    padding: 12px 0;
+  }
+
+  .nav-container {
+    padding: 0 20px;
+  }
+
   .nav-toggle {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .nav-menu {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 100%;
+    width: 85%;
+    max-width: 400px;
     height: 100vh;
     background: var(--white);
     flex-direction: column;
-    justify-content: center;
-    padding: 40px;
-    transition: right 0.3s ease;
+    justify-content: flex-start;
+    padding: 0;
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1000;
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+    gap: 0;
   }
 
   .nav-menu.active {
     right: 0;
   }
 
+  .nav-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--gray-200);
+    width: 100%;
+  }
+
+  .nav-logo-mobile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .nav-logo-mobile .logo-nks {
+    font-size: 24px;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .nav-logo-mobile .logo-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dark);
+  }
+
+  .nav-close-mobile {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--gray-600);
+    padding: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-close-mobile:hover {
+    color: var(--primary);
+    transform: rotate(90deg);
+  }
+
   .nav-list {
     flex-direction: column;
-    gap: 24px;
+    gap: 0;
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+  }
+
+  .nav-item {
+    width: 100%;
+    border-bottom: 1px solid var(--gray-100);
   }
 
   .nav-item > a,
   .nav-item > span {
-    font-size: 20px;
+    font-size: 18px;
+    padding: 16px 0;
+    width: 100%;
+    justify-content: space-between;
   }
 
   .dropdown-menu {
@@ -192,25 +350,114 @@
     opacity: 1;
     visibility: visible;
     box-shadow: none;
-    padding: 12px 0 0 24px;
-    min-width: auto;
+    padding: 0;
+    margin: 0;
+    background: var(--gray-50);
+    border-radius: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
   }
 
-  .nav-item:hover .dropdown-menu {
-    transform: none;
+  .dropdown-menu.active {
+    max-height: 300px;
+    transition: max-height 0.3s ease-in;
+  }
+
+  .nav-item.dropdown.open .dropdown-menu {
+    max-height: 300px;
+  }
+
+  .dropdown-menu li a {
+    padding: 12px 16px 12px 32px;
+    font-size: 16px;
+    white-space: normal;
+  }
+
+  .dropdown-menu li a:hover {
+    transform: translateX(8px);
   }
 
   .nav-buttons {
     flex-direction: column;
     width: 100%;
-    max-width: 300px;
+    padding: 20px;
+    gap: 12px;
   }
 
   .nav-btn {
     width: 100%;
     text-align: center;
+    padding: 12px 24px;
+    font-size: 14px;
   }
 }
-.find-scholar{
-  background-color: rgb(77, 113, 231);
+
+/* Small Mobile Responsive */
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 0 16px;
+  }
+
+  .nav-menu {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .nav-item > a,
+  .nav-item > span {
+    font-size: 16px;
+    padding: 14px 0;
+  }
+
+  .dropdown-menu li a {
+    font-size: 14px;
+    padding: 10px 16px 10px 28px;
+  }
+
+  .nav-btn {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
 }
+
+/* Landscape Mode for Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .nav-menu {
+    overflow-y: auto;
+  }
+
+  .nav-list {
+    padding: 16px;
+  }
+
+  .nav-item > a,
+  .nav-item > span {
+    padding: 12px 0;
+  }
+
+  .dropdown-menu.active {
+    max-height: 200px;
+  }
+}
+
+/* Animation for mobile menu items */
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.nav-menu.active .nav-item {
+  animation: slideInFromRight 0.3s ease forwards;
+}
+
+.nav-menu.active .nav-item:nth-child(1) { animation-delay: 0.05s; }
+.nav-menu.active .nav-item:nth-child(2) { animation-delay: 0.1s; }
+.nav-menu.active .nav-item:nth-child(3) { animation-delay: 0.15s; }
+.nav-menu.active .nav-item:nth-child(4) { animation-delay: 0.2s; }
