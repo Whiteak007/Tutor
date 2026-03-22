@@ -1,0 +1,142 @@
+:root {
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --text-dark: #2d3436;
+    --text-light: #636e72;
+}
+
+.about-container {
+    padding: 80px 10%;
+    min-height: 80vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9ff;
+}
+
+.about-hero {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.about-hero h1 {
+    font-size: 2.5rem;
+    color: #4834d4;
+    margin-bottom: 10px;
+}
+
+.underline {
+    width: 80px;
+    height: 4px;
+    background: var(--primary-gradient);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.founder-img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 5px solid #fff;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.profile-details h2 {
+    font-size: 2rem;
+    color: var(--text-dark);
+}
+
+.designation {
+    color: #6c5ce7;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.bio {
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 25px;
+}
+
+.skills-tags {
+    margin-bottom: 30px;
+}
+
+.skills-tags span {
+    background: #f1f2f6;
+    padding: 6px 15px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    margin-right: 10px;
+    color: #2f3542;
+}
+
+.contact-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.action-btn:hover {
+    transform: translateY(-3px);
+}
+
+.whatsapp-btn {
+    background-color: #25D366;
+    color: white;
+}
+
+.whatsapp-btn img {
+    width: 20px;
+}
+
+.call-btn {
+    background: var(--primary-gradient);
+    color: white;
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .contact-actions {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .founder-img {
+        width: 100%;
+        height: auto;
+    }
+    .about-container {
+        padding: 40px 5%;
+    }
+    .action-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,419 @@
+.teacher-training-page {
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.training-hero {
+  background: linear-gradient(135deg, #667eea0a 0%, #764ba20a 100%);
+  padding: 100px 0;
+  position: relative;
+  text-align: center;
+}
+
+.hero-tag {
+  display: inline-block;
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--primary);
+  padding: 8px 20px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.training-hero .hero-title {
+  font-size: 52px;
+  font-weight: 800;
+  margin-bottom: 24px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.training-hero .hero-subtitle {
+  font-size: 18px;
+  color: var(--gray-500);
+  max-width: 600px;
+  margin: 0 auto 32px;
+}
+
+/* Stats Section */
+.training-stats {
+  padding: 60px 0;
+  background: var(--white);
+  margin-top: -60px;
+  position: relative;
+  z-index: 2;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.stat-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: var(--shadow-lg);
+}
+
+.stat-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 24px;
+}
+
+.stat-content h3 {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+
+.stat-content p {
+  color: var(--gray-500);
+  font-size: 14px;
+}
+
+/* Program Overview */
+.program-overview {
+  padding: 80px 0;
+  background: var(--gray-100);
+}
+
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.module-card {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 32px 24px;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.module-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.module-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.module-card h3 {
+  font-size: 20px;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+
+.module-duration {
+  display: inline-block;
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--primary);
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.module-card ul {
+  list-style: none;
+}
+
+.module-card li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: var(--gray-500);
+}
+
+.check-icon {
+  color: var(--primary);
+  font-size: 14px;
+}
+
+/* Benefits Section */
+.benefits-section {
+  padding: 80px 0;
+  background: var(--white);
+}
+
+.benefits-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.benefits-image {
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.benefits-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.benefits-image:hover img {
+  transform: scale(1.05);
+}
+
+.benefits-tag {
+  display: inline-block;
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--primary);
+  padding: 8px 20px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.benefits-content h2 {
+  font-size: 36px;
+  color: var(--dark);
+  margin-bottom: 24px;
+}
+
+.benefits-list {
+  list-style: none;
+  margin-bottom: 32px;
+}
+
+.benefits-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  color: var(--gray-500);
+}
+
+.benefit-check {
+  color: var(--accent);
+  font-size: 20px;
+}
+
+/* Certification Section */
+.certification-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: var(--white);
+}
+
+.certification-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.cert-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 20px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.certification-content h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.certification-content p {
+  opacity: 0.9;
+  margin-bottom: 24px;
+  line-height: 1.8;
+}
+
+.certification-content ul {
+  list-style: none;
+}
+
+.certification-content li {
+  margin-bottom: 12px;
+  opacity: 0.9;
+}
+
+.certification-card {
+  perspective: 1000px;
+}
+
+.certificate-preview {
+  background: var(--white);
+  color: var(--dark);
+  padding: 40px;
+  border-radius: 30px;
+  text-align: center;
+  transform: rotateY(-15deg) rotateX(5deg);
+  transition: transform 0.5s ease;
+  box-shadow: var(--shadow-xl);
+}
+
+.certificate-preview:hover {
+  transform: rotateY(0) rotateX(0);
+}
+
+.certificate-badge {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0 auto 20px;
+}
+
+.certificate-preview h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.cert-name {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--primary);
+  margin: 10px 0;
+  padding: 10px 0;
+  border-top: 2px dashed var(--gray-200);
+  border-bottom: 2px dashed var(--gray-200);
+}
+
+.cert-program {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.cert-date {
+  color: var(--gray-500);
+  margin-top: 20px;
+}
+
+/* FAQ Section */
+.training-faq {
+  padding: 80px 0;
+  background: var(--gray-100);
+}
+
+.training-faq .faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.training-faq .faq-item {
+  background: var(--white);
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.training-faq .faq-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.training-faq .faq-item h4 {
+  font-size: 18px;
+  color: var(--dark);
+  margin-bottom: 12px;
+}
+
+.training-faq .faq-item p {
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .modules-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .training-hero .hero-title {
+    font-size: 36px;
+  }
+
+  .benefits-wrapper,
+  .certification-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .benefits-image {
+    order: -1;
+  }
+
+  .training-faq .faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certificate-preview {
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modules-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}

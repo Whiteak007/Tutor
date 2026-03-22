@@ -1,0 +1,479 @@
+.become-teacher-page {
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.become-teacher-hero {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  padding: 80px 0;
+  color: var(--white);
+  text-align: center;
+}
+
+.become-teacher-hero .hero-title {
+  font-size: 52px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.become-teacher-hero .hero-subtitle {
+  font-size: 18px;
+  opacity: 0.9;
+  margin-bottom: 48px;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.benefit-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 24px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.benefit-icon {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.benefit-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Process Steps */
+.process-steps {
+  padding: 60px 0 40px;
+  background: var(--white);
+}
+
+.steps-timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.steps-timeline::before {
+  content: '';
+  position: absolute;
+  top: 35px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gray-200);
+  z-index: 1;
+}
+
+.step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  flex: 1;
+}
+
+.step-number {
+  width: 70px;
+  height: 70px;
+  background: var(--white);
+  border: 3px solid var(--gray-200);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+}
+
+.step-item.active .step-number {
+  border-color: var(--primary);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: var(--white);
+}
+
+.step-item.completed .step-number {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--white);
+}
+
+.step-title {
+  font-weight: 600;
+  color: var(--gray-500);
+}
+
+.step-item.active .step-title {
+  color: var(--primary);
+}
+
+/* Application Form */
+.application-form {
+  padding: 40px 0 80px;
+  background: var(--gray-100);
+}
+
+.form-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--white);
+  border-radius: 32px;
+  padding: 48px;
+  box-shadow: var(--shadow-xl);
+}
+
+.form-step h2 {
+  font-size: 28px;
+  color: var(--dark);
+  margin-bottom: 32px;
+}
+
+.form-step .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-step .form-group {
+  margin-bottom: 24px;
+}
+
+.form-step label {
+  display: block;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+
+.form-step input,
+.form-step select,
+.form-step textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.form-step input:focus,
+.form-step select:focus,
+.form-step textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.form-step input.error,
+.form-step select.error {
+  border-color: var(--error);
+}
+
+.error-message {
+  display: block;
+  color: var(--error);
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.checkbox-group {
+  display: flex;
+  gap: 24px;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: auto;
+}
+
+select[multiple] {
+  height: 120px;
+}
+
+/* File Upload */
+.file-upload .upload-area {
+  border: 2px dashed var(--gray-300);
+  border-radius: 12px;
+  padding: 32px;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.file-upload .upload-area:hover {
+  border-color: var(--primary);
+  background: rgba(139, 92, 246, 0.05);
+}
+
+.file-upload .upload-area.error {
+  border-color: var(--error);
+}
+
+.upload-icon {
+  font-size: 32px;
+  color: var(--gray-400);
+  margin-bottom: 12px;
+}
+
+.upload-area p {
+  margin-bottom: 8px;
+}
+
+.upload-area p span {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.upload-area small {
+  color: var(--gray-500);
+}
+
+.upload-area input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.file-info,
+.file-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 8px 12px;
+  background: var(--gray-100);
+  border-radius: 8px;
+}
+
+.file-success {
+  color: var(--accent);
+}
+
+.file-list {
+  margin-top: 12px;
+}
+
+.file-item {
+  margin-top: 8px;
+}
+
+/* Form Navigation */
+.form-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--gray-200);
+}
+
+.form-navigation button {
+  min-width: 150px;
+}
+
+/* Success Page */
+.success-container {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.success-card {
+  background: var(--white);
+  border-radius: 32px;
+  padding: 60px 48px;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: var(--shadow-xl);
+}
+
+.success-icon {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, var(--accent) 0%, #059669 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  color: var(--white);
+  margin: 0 auto 32px;
+}
+
+.success-card h2 {
+  font-size: 32px;
+  color: var(--dark);
+  margin-bottom: 16px;
+}
+
+.success-card p {
+  color: var(--gray-500);
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+.success-details {
+  background: var(--gray-100);
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 32px;
+  text-align: left;
+}
+
+.success-details h4 {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.success-details ul {
+  list-style: none;
+}
+
+.success-details li {
+  padding: 8px 0;
+  color: var(--gray-600);
+}
+
+/* Why Join Section */
+.why-join {
+  padding: 80px 0;
+  background: var(--white);
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 48px;
+}
+
+.reason-card {
+  background: linear-gradient(135deg, #667eea0a 0%, #764ba20a 100%);
+  padding: 32px;
+  border-radius: 20px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.reason-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.reason-number {
+  font-size: 48px;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.reason-card h3 {
+  font-size: 20px;
+  color: var(--dark);
+  margin-bottom: 12px;
+}
+
+.reason-card p {
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .benefits-grid,
+  .reasons-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .become-teacher-hero .hero-title {
+    font-size: 36px;
+  }
+
+  .steps-timeline {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .steps-timeline::before {
+    display: none;
+  }
+
+  .step-item {
+    flex: 0 0 calc(50% - 10px);
+  }
+
+  .form-card {
+    padding: 24px;
+  }
+
+  .form-step .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .form-navigation {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .form-navigation button {
+    width: 100%;
+  }
+
+  .checkbox-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .benefits-grid,
+  .reasons-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .step-item {
+    flex: 0 0 100%;
+  }
+
+  .success-card {
+    padding: 32px 20px;
+  }
+
+  .success-card h2 {
+    font-size: 24px;
+  }
+}
