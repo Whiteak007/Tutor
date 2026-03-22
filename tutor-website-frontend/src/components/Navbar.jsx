@@ -80,7 +80,6 @@ const Navbar = () => {
                   <li><Link to="/scholarship" onClick={closeMenu}>Scholarship Program</Link></li>
                   <li><Link to="/teacher-training" onClick={closeMenu}>Teacher Training</Link></li>
                   <li><Link to="/community" onClick={closeMenu}>Community Program</Link></li>
-                  <li><Link to="/government" onClick={closeMenu}>Govt. Partnership</Link></li>
                 </ul>
               </li>
               <li className="nav-item">
