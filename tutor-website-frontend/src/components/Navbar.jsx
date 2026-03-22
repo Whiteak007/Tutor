@@ -77,9 +77,9 @@ const Navbar = () => {
                   }
                 </span>
                 <ul className={`dropdown-menu ${dropdownOpen ? 'active' : ''}`}>
-                  <li><Link to="/scholarship" onClick={closeMenu}>Scholarship Program</Link></li>
-                  <li><Link to="/teacher-training" onClick={closeMenu}>Teacher Training</Link></li>
-                  <li><Link to="/community" onClick={closeMenu}>Community Program</Link></li>
+                  <li id='dropdown-color'><Link to="/scholarship" onClick={closeMenu}>Scholarship Program</Link></li>
+                  <li id='dropdown-color'><Link to="/teacher-training" onClick={closeMenu}>Teacher Training</Link></li>
+                  <li id='dropdown-color'><Link to="/community" onClick={closeMenu}>Community Program</Link></li>
                 </ul>
               </li>
               <li className="nav-item">

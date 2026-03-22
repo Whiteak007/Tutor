@@ -1,8 +1,39 @@
+/* CSS Variables for consistent theming */
+:root {
+  --primary: #8b5cf6;
+  --primary-dark: #7c3aed;
+  --primary-light: #a78bfa;
+  --secondary: #f59e0b;
+  --accent: #10b981;
+  --dark: #111827;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-500: #6b7280;
+  --white: #ffffff;
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Wrapper */
 .tutor-card-wrapper {
   position: relative;
   height: 100%;
+  animation: fadeInUp 0.5s ease-out;
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Card Container */
 .tutor-card {
   background: var(--white);
   border-radius: 24px;
@@ -13,6 +44,36 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Responsive padding */
+@media (max-width: 1024px) {
+  .tutor-card {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tutor-card {
+    padding: 20px;
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .tutor-card {
+    padding: 18px;
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tutor-card {
+    padding: 16px;
+    border-radius: 16px;
+  }
 }
 
 .tutor-card:hover {
@@ -21,17 +82,64 @@
   border-color: var(--primary-light);
 }
 
+@media (max-width: 768px) {
+  .tutor-card:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* Header Section */
 .tutor-card-header {
   display: flex;
   gap: 16px;
   margin-bottom: 20px;
 }
 
+@media (max-width: 640px) {
+  .tutor-card-header {
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tutor-card-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+}
+
+/* Image Container */
 .tutor-image {
   position: relative;
   width: 100px;
   height: 100px;
   flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .tutor-image {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@media (max-width: 640px) {
+  .tutor-image {
+    width: 85px;
+    height: 85px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tutor-image {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 8px;
+  }
 }
 
 .tutor-image img {
@@ -41,8 +149,26 @@
   border-radius: 20px;
   border: 3px solid var(--white);
   box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
 }
 
+.tutor-card:hover .tutor-image img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .tutor-image img {
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tutor-image img {
+    border-radius: 16px;
+  }
+}
+
+/* Badge on Image */
 .tutor-badge {
   position: absolute;
   top: -8px;
@@ -54,10 +180,36 @@
   white-space: nowrap;
   background: var(--white);
   box-shadow: var(--shadow);
+  z-index: 2;
 }
 
+@media (max-width: 640px) {
+  .tutor-badge {
+    font-size: 10px;
+    padding: 3px 10px;
+    top: -6px;
+    right: -6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tutor-badge {
+    font-size: 9px;
+    padding: 3px 8px;
+    top: -5px;
+    right: -5px;
+  }
+}
+
+/* Tutor Info */
 .tutor-info {
   flex: 1;
+}
+
+@media (max-width: 480px) {
+  .tutor-info {
+    width: 100%;
+  }
 }
 
 .tutor-name {
@@ -65,18 +217,58 @@
   font-weight: 700;
   color: var(--dark);
   margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+  .tutor-name {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 640px) {
+  .tutor-name {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tutor-name {
+    font-size: 18px;
+  }
 }
 
 .tutor-title {
   font-size: 13px;
   color: var(--gray-500);
   margin-bottom: 8px;
+  line-height: 1.4;
 }
 
+@media (max-width: 768px) {
+  .tutor-title {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tutor-title {
+    font-size: 12px;
+  }
+}
+
+/* Rating */
 .tutor-rating {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .tutor-rating {
+    justify-content: center;
+  }
 }
 
 .stars {
@@ -94,16 +286,51 @@
   font-size: 12px;
 }
 
+@media (max-width: 640px) {
+  .star-filled,
+  .star-empty {
+    font-size: 11px;
+  }
+}
+
 .rating-count {
   font-size: 12px;
   color: var(--gray-500);
 }
 
+@media (max-width: 640px) {
+  .rating-count {
+    font-size: 11px;
+  }
+}
+
+/* Details Section */
 .tutor-details {
   margin-bottom: 20px;
   padding: 16px 0;
   border-top: 1px solid var(--gray-200);
   border-bottom: 1px solid var(--gray-200);
+}
+
+@media (max-width: 768px) {
+  .tutor-details {
+    margin-bottom: 18px;
+    padding: 14px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .tutor-details {
+    margin-bottom: 16px;
+    padding: 12px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .tutor-details {
+    margin-bottom: 14px;
+    padding: 10px 0;
+  }
 }
 
 .detail-item {
@@ -113,25 +340,73 @@
   margin-bottom: 12px;
   font-size: 14px;
   color: var(--gray-500);
+  line-height: 1.4;
 }
 
 .detail-item:last-child {
   margin-bottom: 0;
 }
 
+@media (max-width: 768px) {
+  .detail-item {
+    gap: 10px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 640px) {
+  .detail-item {
+    gap: 8px;
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+}
+
 .detail-icon {
   color: var(--primary);
   font-size: 14px;
   width: 16px;
+  flex-shrink: 0;
 }
 
+@media (max-width: 768px) {
+  .detail-icon {
+    font-size: 13px;
+    width: 15px;
+  }
+}
+
+@media (max-width: 640px) {
+  .detail-icon {
+    font-size: 12px;
+    width: 14px;
+  }
+}
+
+/* Footer */
 .tutor-footer {
   margin-top: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 12px;
 }
 
+@media (max-width: 640px) {
+  .tutor-footer {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .tutor-footer {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+/* Fees */
 .tutor-fees {
   display: flex;
   flex-direction: column;
@@ -142,29 +417,52 @@
   color: var(--gray-500);
 }
 
+@media (max-width: 640px) {
+  .fees-label {
+    font-size: 11px;
+  }
+}
+
 .fees-amount {
   font-size: 20px;
   font-weight: 800;
   color: var(--dark);
 }
 
+@media (max-width: 768px) {
+  .fees-amount {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 640px) {
+  .fees-amount {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fees-amount {
+    font-size: 20px;
+  }
+}
+
+/* Actions */
 .tutor-actions {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.scholarship-tag {
-  background: rgba(245, 158, 11, 0.1);
-  color: var(--secondary);
-  padding: 4px 10px;
-  border-radius: 100px;
-  font-size: 11px;
-  font-weight: 700;
+@media (max-width: 480px) {
+  .tutor-actions {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .btn-view {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 4px;
   padding: 8px 16px;
@@ -175,6 +473,31 @@
   font-weight: 600;
   font-size: 13px;
   transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .btn-view {
+    padding: 7px 14px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .btn-view {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-view {
+    padding: 10px 20px;
+    font-size: 13px;
+    width: auto;
+    min-width: 120px;
+    justify-content: center;
+  }
 }
 
 .btn-view:hover {
@@ -182,6 +505,21 @@
   box-shadow: 0 10px 20px -5px rgba(139, 92, 246, 0.4);
 }
 
+@media (max-width: 480px) {
+  .btn-view:hover {
+    transform: translateX(2px);
+  }
+}
+
+.btn-view span {
+  transition: transform 0.3s ease;
+}
+
+.btn-view:hover span {
+  transform: translateX(2px);
+}
+
+/* Premium Badge (Absolute positioned) */
 .premium-badge {
   position: absolute;
   top: -10px;
@@ -196,31 +534,129 @@
   align-items: center;
   gap: 6px;
   box-shadow: var(--shadow);
+  z-index: 3;
 }
 
-/* Responsive */
+@media (max-width: 768px) {
+  .premium-badge {
+    top: -8px;
+    left: 16px;
+    padding: 3px 14px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 640px) {
+  .premium-badge {
+    top: -7px;
+    left: 12px;
+    padding: 3px 12px;
+    font-size: 10px;
+  }
+}
+
 @media (max-width: 480px) {
+  .premium-badge {
+    top: -8px;
+    left: 16px;
+    padding: 4px 14px;
+    font-size: 11px;
+  }
+}
+
+/* Scholarship Tag (Optional - can be used in actions) */
+.scholarship-tag {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--secondary);
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .scholarship-tag {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+  .tutor-card:hover {
+    transform: none;
+  }
+  
+  .tutor-card:hover .tutor-image img {
+    transform: none;
+  }
+  
+  .btn-view:hover {
+    transform: none;
+  }
+}
+
+/* Landscape mode optimization */
+@media (max-height: 600px) and (orientation: landscape) {
+  .tutor-card {
+    padding: 16px;
+  }
+  
   .tutor-card-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    margin-bottom: 12px;
   }
-
-  .tutor-image {
-    margin-bottom: 8px;
+  
+  .tutor-details {
+    margin-bottom: 12px;
+    padding: 10px 0;
   }
-
-  .tutor-rating {
-    justify-content: center;
+  
+  .detail-item {
+    margin-bottom: 6px;
   }
+}
 
-  .tutor-footer {
-    flex-direction: column;
-    gap: 16px;
+/* Small screen optimizations */
+@media (max-width: 380px) {
+  .tutor-name {
+    font-size: 16px;
   }
+  
+  .tutor-title {
+    font-size: 11px;
+  }
+  
+  .fees-amount {
+    font-size: 18px;
+  }
+  
+  .btn-view {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
 
-  .tutor-actions {
-    width: 100%;
-    justify-content: center;
+/* Grid layout support when used in parent */
+.tutor-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .tutor-card-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tutor-card-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 12px;
   }
 }

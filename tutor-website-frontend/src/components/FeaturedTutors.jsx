@@ -2,8 +2,10 @@ import React from 'react';
 import TutorCard from './TutorCard';
 import './FeaturedTutors.css';
 import { useNavigate } from 'react-router-dom';
+
 const FeaturedTutors = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+  
   const tutors = {
     scholarship: {
       id: 1,
@@ -41,7 +43,6 @@ const FeaturedTutors = () => {
       city: 'Muzaffarpur',
       fees: 2000
     }
-    
   };
 
   const handleHireClick = () => {
@@ -66,7 +67,9 @@ const FeaturedTutors = () => {
             <TutorCard tutor={tutors.scholarship} type="scholarship" />
             <div className="showcase-action">
               <span>Hire Under Scholarship Plan</span>
-              <button className="btn btn-outline" onClick={handleHireClick}>Hire as Regular Teacher →</button>
+              <button className="btn btn-outline" onClick={handleHireClick}>
+                Hire as Regular Teacher →
+              </button>
             </div>
           </div>
 
@@ -74,7 +77,9 @@ const FeaturedTutors = () => {
             <TutorCard tutor={tutors.regular} type="regular" />
             <div className="showcase-action">
               <span>Hire as Regular Teacher</span>
-              <button className="btn btn-outline" onClick={handleHireClick}>View Details →</button>
+              <button className="btn btn-outline" onClick={handleHireClick}>
+                View Details →
+              </button>
             </div>
           </div>
 
@@ -82,7 +87,9 @@ const FeaturedTutors = () => {
             <TutorCard tutor={tutors.premium} type="premium" />
             <div className="showcase-action">
               <span>Hire Premium Mentor</span>
-              <button className="btn btn-outline" onClick={handleHireClick}>Book Now →</button>
+              <button className="btn btn-outline" onClick={handleHireClick}>
+                Book Now →
+              </button>
             </div>
           </div>
         </div>

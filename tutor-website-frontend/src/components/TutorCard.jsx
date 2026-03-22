@@ -23,9 +23,9 @@ const TutorCard = ({ tutor, type }) => {
         <div className="tutor-card-header">
           <div className="tutor-image">
             <img src={tutor.image} alt={tutor.name} />
-            {/* <div className="tutor-badge" style={{ background: badge.bg, color: badge.color }}>
+            <div className="tutor-badge" style={{ background: badge.bg, color: badge.color }}>
               {badge.text}
-            </div> */}
+            </div>
           </div>
           
           <div className="tutor-info">
@@ -65,9 +65,6 @@ const TutorCard = ({ tutor, type }) => {
           </div>
           
           <div className="tutor-actions">
-            {/* {type === 'scholarship' && (
-              <span className="scholarship-tag">Scholarship Available</span>
-            )} */}
             <Link to={`/teacher/${tutor.id}`} className="btn-view">
               View Profile <span>→</span>
             </Link>

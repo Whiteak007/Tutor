@@ -104,7 +104,7 @@
   top: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(10px);
-  /* background: var(--white); */
+  background: var(--white);
   border-radius: 12px;
   padding: 8px;
   min-width: 220px;
@@ -115,6 +115,8 @@
   list-style: none;
   margin-top: 8px;
   z-index: 100;
+  /* Add these to ensure proper text colors */
+  background-color: #ffffff; /* Solid white background */
 }
 
 .nav-item:hover .dropdown-menu {
@@ -126,17 +128,18 @@
 .dropdown-menu li a {
   display: block;
   padding: 10px 16px;
-  color: var(--dark);
+  color: #1a1a2e; /* Dark color for better visibility */
   text-decoration: none;
   border-radius: 8px;
   transition: all 0.3s ease;
   font-size: 14px;
   white-space: nowrap;
+  font-weight: 500; /* Add weight for better readability */
 }
 
 .dropdown-menu li a:hover {
-  background: var(--gray-100);
-  color: var(--primary);
+  background: #f3f4f6; /* Light gray hover background */
+  color: #0066cc; /* Primary color on hover */
   transform: translateX(4px);
 }
 
@@ -461,3 +464,8 @@
 .nav-menu.active .nav-item:nth-child(2) { animation-delay: 0.1s; }
 .nav-menu.active .nav-item:nth-child(3) { animation-delay: 0.15s; }
 .nav-menu.active .nav-item:nth-child(4) { animation-delay: 0.2s; }
+
+
+#dropdown-color{
+  color: black;
+}
