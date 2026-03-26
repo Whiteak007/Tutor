@@ -356,6 +356,7 @@ const BecomeTeacher = () => {
                       value={formData.classes}
                       onChange={(e) => setFormData({...formData, classes: Array.from(e.target.selectedOptions, option => option.value)})}
                     >
+                      <option value="6-8">Class 1-5</option>
                       <option value="6-8">Class 6-8</option>
                       <option value="9-10">Class 9-10</option>
                       <option value="11-12">Class 11-12</option>

@@ -100,7 +100,7 @@ const Footer = () => {
       <div className="footer-bottom">
         <div className="container">
           <div className="footer-bottom-content">
-            <p>© 2024 NKS Impact Education Networks. All rights reserved.</p>
+            <p>© 2024 NKS Impact Education. All rights reserved.</p>
             <div className="footer-bottom-links">
               <Link to="/privacy">Privacy Policy</Link>
               <Link to="/terms">Terms of Service</Link>
